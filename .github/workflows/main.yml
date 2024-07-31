@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Update to the latest version
+      uses: actions/checkout@v3  # Latest version
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3  # Update to the latest version
+      uses: actions/setup-node@v3  # Latest version
       with:
-        node-version: '20'  # Update to Node.js 20
+        node-version: '20'  # Set Node.js version to 20
 
     - name: Install dependencies
       run: npm install
@@ -25,9 +25,10 @@ jobs:
       run: echo "Building the project..."
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4  # Update to the latest version
+      uses: peaceiris/actions-gh-pages@v4  # Latest version
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./  # Specify the directory to publish (if you have a build directory, use that)
+        publish_dir: ./  # Specify the directory to publish
+
 
 
